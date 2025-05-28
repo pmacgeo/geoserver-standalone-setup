@@ -50,7 +50,7 @@ sudo chown -R geo:geo /opt/geoserver
 
 ```bash
 sudo mkdir /home/geo/geoserver_data
-sudo chown -R geo:geo /home/geo/geoserver_data
+sudo chown -R geo:geo /home/geo/geoserver-standalone
 ```
 
 ## Configuração
@@ -86,7 +86,7 @@ User=geo
 Group=geo
 WorkingDirectory=/opt/geoserver
 Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64"
-ExecStart=/usr/bin/java -Xms128m -Xmx2g -DGEOSERVER_DATA_DIR=/home/geo/geoserver_data -jar /opt/geoserver/start.jar
+ExecStart=/usr/bin/java -Xms128m -Xmx2g -DGEOSERVER_DATA_DIR=/home/geo/geoserver-standalone -jar /opt/geoserver/start.jar
 Restart=on-failure
 RestartSec=5
 TimeoutStartSec=30
